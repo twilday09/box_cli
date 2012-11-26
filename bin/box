@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'commander/import'
+require 'box_cli'
+
+program :version,        BoxCli::VERSION
+program :description,    'CLI for box'
+program :help_formatter, :compact
+program :help, 'Note', "When a file item and a folder item have the same name, generic commands such as 'delete' will delete the file first."
+
+global_option '-k', '--api_key API_KEY',   String, 'api key'
+global_option '-u', '--user USER',         String, 'username or email address'
+global_option '-p', '--password PASSWORD', String, 'password'
+
+def make_command(name, syntax, description)
+  command name do |c|
+    c.syntax = syntax
+    c.description = description
+    c.action { |args, options| exit BoxCli.dispatch(c.name, options, args) }
+  end
+end
+
+make_command :account_info,     'box account_info',              'Show account information'
+make_command :create_folder,    'box create_folder folder_name', 'Create a folder named folder_name in the root folder'
+make_command :delete,           'box delete path',               'Delete whatever is at path'
+make_command :info,             'box info [path]',               'Show info for path (default: root)'
+make_command :settings,         'box settings',                  'Show settings'
+make_command :upload,           'box upload path folder_path',   'Upload the file at path to folder_path'
