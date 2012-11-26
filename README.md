@@ -1,6 +1,10 @@
+
 # box_cli
 
 box_cli provides a basic and minimal command-line interface to Box (<https://www.box.com/>). It is not written by Box; use at your own risk. We hope that eventually Box will provide their own command-line interfaces for Linux, BSD, OS/X, Windows, etc. Until then, this may help.
+
+[![Build Status](https://api.travis-ci.org/IoraHealth/box_cli.png)](https://travis-ci.org/IoraHealth/box_cli)  
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/IoraHealth/box_cli)  
 
 ## Install
 
