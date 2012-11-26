@@ -1,7 +1,7 @@
 language: ruby
 rvm:
-# - "1.8.7"
-  - "1.9.2"
-  - "1.9.3"
+  - "1.8.7"
+#  - "1.9.2"
+#  - "1.9.3"
 env:
   - BOX_CLI_API_KEY=pzay0i0o2psakiitm9ysn2jjd2ho7qg5 BOX_CLI_USER=box_cli_testing@iorahealth.com BOX_CLI_PASSWORD=crazypassword01
