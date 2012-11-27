@@ -51,15 +51,16 @@ To understand what the status value "get_account_info_ok" means, consult the doc
 
 ## Testing
 
-To run all tests that don't require exercising box directly (replacing the key, user, and password *with those used when the VCR cassettes were created*),
+To run all tests that don't require exercising box directly, set the BOX_CLI_* environment variables. Unless they are
+set to something, the console will be prompted for values. The values don't have to be realistic.
 
-    BOX_CLI_API_KEY=pzay0i0o2psakiitm9ysn2jjd2ho7qg5 BOX_CLI_USER=box_cli_testing@iorahealth.com BOX_CLI_PASSWORD=crazypassword01 bundle exec rake
+    BOX_CLI_API_KEY=abodaciouskey BOX_CLI_USER=barack@whitehouse.gov BOX_CLI_PASSWORD=bananatime bundle exec rake
 
 Many of the Cucumber features require a *working* Box API key and user credentials, which should be defined through environment variables. The default rake task excludes all features tagged with `@requires_authorization` so that TravisCI will not exercise the actual service. This means that if you make changes in features, you should verify by running cucumber directly (not through rake) with your own key, user, and password:
 
-    BOX_CLI_API_KEY=pzay0i0o2psakiitm9ysn2jjd2ho7qg5 BOX_CLI_USER=box_cli_testing@iorahealth.com BOX_CLI_PASSWORD=crazypassword01 bundle exec cucumber
+    BOX_CLI_API_KEY=pzay0j0o2psakijtm9ysn2jjd2ho7qg5 BOX_CLI_USER=box_cli_testing@iorahealth.com BOX_CLI_PASSWORD=secretpassword01 bundle exec cucumber
 
-NOTE: If you recreate the VCR cassettes, make sure to invalidate your API key and credentials before making a pull request or anything else that would reveal your key or credentials.
+NOTE: If you recreate the VCR cassettes, make sure to invalidate your API key and credentials before making a pull request or anything else that would reveal your key or credentials. While we've set VCR to filter out these sensitive data, don't run the risk of something getting captured.
 
 ## Contributing to box_cli
  
