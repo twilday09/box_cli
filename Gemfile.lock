@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    box_cli (0.1.0)
+    box_cli (0.1.1)
       active_support
       box-api
       commander
