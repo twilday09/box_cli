@@ -123,7 +123,7 @@ module BoxCli
           auth_token_manager.remove
           raise NotAuthorized
         end
-        auth_token_manager.save(auth_token)
+        auth_token_manager.save(account.auth_token)
         @account = account
       end
       @account
